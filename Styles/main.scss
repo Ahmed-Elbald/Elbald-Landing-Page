@@ -232,7 +232,7 @@ header {
               padding: 0.3em;
               border-top: 1px solid #eee;
               border-bottom: 1px solid #eee;
-              font-size: .8rem;
+              font-size: 0.8rem;
               font-weight: bold;
               color: $main-color;
               position: relative;
@@ -592,19 +592,19 @@ header {
           position: relative;
           z-index: 1;
           &::before {
-          @include pseudo-element("");
-          width: 0;
-          height: 102%;
-          top: 50%;
-          transform: translateY(-50%);
-          left: 0;
-          transition-duration: 0.3s;
-          z-index: -1;
-          -webkit-transform: translateY(-50%);
-          -moz-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-          -o-transform: translateY(-50%);
-}
+            @include pseudo-element("");
+            width: 0;
+            height: 102%;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            transition-duration: 0.3s;
+            z-index: -1;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+          }
         }
       }
       &.card-1 {
@@ -1343,7 +1343,7 @@ header {
     }
   }
   .discount-form {
-    padding: .9em;
+    padding: 0.9em;
     h3 {
       font-size: 2rem;
       text-align: center;
