@@ -90,7 +90,7 @@ section {
   width: max-content;
   margin: 0 auto 5em;
   text-transform: uppercase;
-  transition-duration: 0.8s;
+  transition-duration: 0.5s;
   z-index: 3;
   user-select: none;
 }
@@ -119,43 +119,47 @@ section {
   outline-color: #2196f3;
 }
 .sec-header:hover::before {
-  animation-name: header-right-move, header-fill;
+  animation: right-fill 0.5s linear forwards;
+  -webkit-animation: right-fill 0.5s linear forwards;
+  z-index: -1;
 }
 .sec-header:hover::after {
-  animation-name: header-left-move, header-fill;
-}
-.sec-header:hover::before, .sec-header:hover::after {
+  animation: left-fill 0.5s linear forwards;
+  -webkit-animation: left-fill 0.5s linear forwards;
   z-index: -1;
-  animation-duration: 0.3s, 0.5s;
-  animation-delay: 0s, 0.3s;
-  animation-fill-mode: forwards;
 }
-@keyframes header-right-move {
+@keyframes right-fill {
+  30% {
+    right: 0;
+    width: 15px;
+    height: 15px;
+  }
   100% {
     right: 0;
-  }
-}
-@keyframes header-left-move {
-  100% {
-    left: 0;
-  }
-}
-@keyframes header-fill {
-  100% {
-    height: 100%;
-    width: 51%;
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
+    width: 55%;
+    height: 100%;
   }
 }
-@media (max-width: 500px) {
-  .sec-header {
-    font-size: 1rem;
-    padding: 0.5em;
-    outline: 2px solid black;
+@keyframes left-fill {
+  30% {
+    left: 0;
+    width: 15px;
+    height: 15px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    width: 55%;
+    height: 100%;
   }
 }
 
@@ -351,17 +355,11 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
   -o-transform: translateX(-50%);
   color: #2196f3;
   font-size: 2rem;
-  animation: link-up-down 1s ease-in-out 0s infinite;
-  -webkit-animation: link-up-down 1s ease-in-out 0s infinite;
+  animation: link-up-down 0.5s ease-in-out 0s alternate infinite;
+  -webkit-animation: link-up-down 0.5s ease-in-out 0s alternate infinite;
   z-index: 4;
 }
 @keyframes link-up-down {
-  33% {
-    bottom: 0.7em;
-  }
-  66% {
-    bottom: 0.2em;
-  }
   100% {
     bottom: 0.7em;
   }
@@ -377,20 +375,6 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
     -webkit-animation: img-up-down 2s ease-in-out 0s infinite alternate;
   }
   @keyframes img-up-down {
-    33% {
-      transform: translateY(30px);
-      -webkit-transform: translateY(30px);
-      -moz-transform: translateY(30px);
-      -ms-transform: translateY(30px);
-      -o-transform: translateY(30px);
-    }
-    66% {
-      transform: translateY(0);
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -o-transform: translateY(0);
-    }
     100% {
       transform: translateY(30px);
       -webkit-transform: translateY(30px);
@@ -441,24 +425,10 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
   -o-transform: translateY(-10px);
 }
 .articles .sec-content .card:hover i {
-  animation: icon-right-left 0.2s ease-in-out 0s infinite alternate;
-  -webkit-animation: icon-right-left 1s ease-in-out 0s infinite alternate;
+  animation: icon-right-left 0.3s ease-in-out 0s infinite alternate;
+  -webkit-animation: icon-right-left 0.3s ease-in-out 0s infinite alternate;
 }
 @keyframes icon-right-left {
-  33% {
-    transform: translateX(5px);
-    -webkit-transform: translateX(5px);
-    -moz-transform: translateX(5px);
-    -ms-transform: translateX(5px);
-    -o-transform: translateX(5px);
-  }
-  66% {
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-  }
   100% {
     transform: translateX(5px);
     -webkit-transform: translateX(5px);
@@ -482,6 +452,7 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
 .gallery .card img {
   transition-duration: 0.3s;
   z-index: -1;
+  height: 100%;
 }
 .gallery .card::before {
   content: "";
