@@ -72,11 +72,11 @@ section {
 
 .sec-header {
   padding: 0.5em 1em;
-  outline: 3px solid black;
+  outline: 2px solid black;
   outline-offset: -1px;
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   position: relative;
   width: max-content;
   margin: 0 auto 5em;
@@ -84,6 +84,10 @@ section {
   transition-duration: 0.5s;
   z-index: 3;
   user-select: none;
+  @include min-mq(800px) {
+    font-size: 2rem;
+    outline-width: 3px;
+  }
   &::before,
   &::after {
     @include pseudo-element("");
@@ -351,11 +355,10 @@ header {
     -o-transform: translateX(-50%);
     color: $main-color;
     font-size: 2rem;
-    animation: link-up-down .5s ease-in-out 0s alternate infinite;
-    -webkit-animation: link-up-down .5s ease-in-out 0s alternate infinite;
+    animation: link-up-down 0.5s ease-in-out 0s alternate infinite;
+    -webkit-animation: link-up-down 0.5s ease-in-out 0s alternate infinite;
     z-index: 4;
-    @keyframes link-up-down
-{
+    @keyframes link-up-down {
       100% {
         bottom: 0.7em;
       }
@@ -423,8 +426,9 @@ header {
         -o-transform: translateY(-10px);
         i {
           animation: icon-right-left 0.3s ease-in-out 0s infinite alternate;
-          -webkit-animation: icon-right-left 0.3s ease-in-out 0s infinite alternate;
-}
+          -webkit-animation: icon-right-left 0.3s ease-in-out 0s infinite
+            alternate;
+        }
       }
     }
   }
@@ -984,6 +988,7 @@ header {
     gap: 1em;
     flex-wrap: wrap;
     .time-card {
+      user-select: none;
       width: 100px;
       display: flex;
       flex-direction: column;
@@ -1012,6 +1017,7 @@ header {
       &:hover,
       &:hover span:last-child {
         border-color: $main-color;
+        color: $main-color
       }
     }
   }
@@ -1174,6 +1180,7 @@ header {
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
       transition-duration: 0.3s;
+      text-transform: capitalize;
     }
     &:hover button {
       background-color: $main-color;
@@ -1286,6 +1293,8 @@ header {
     .category {
       color: $main-color;
       font-size: 1rem;
+      text-align: center;
+      font-style: italic;
     }
   }
 }
@@ -1300,11 +1309,11 @@ header {
     }
   }
   .discount-details {
-    padding: 5em;
+    padding: 5em 2em;
     text-align: center;
-    background: #004d8b url(../images/discount-background2.jpg) no-repeat;
+    background: rgb(0 255 231) url(../images/discount-background2.jpg) no-repeat;
     background-size: 100% 100%;
-    background-blend-mode: multiply;
+    background-blend-mode: overlay;
     color: white;
     h3 {
       font-size: 2rem;
@@ -1355,6 +1364,7 @@ header {
         height: 10em;
         resize: none;
         border: none;
+        font-family: 'cairo';
         &:focus {
           outline: none;
         }

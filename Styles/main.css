@@ -81,11 +81,11 @@ section {
 /* components */
 .sec-header {
   padding: 0.5em 1em;
-  outline: 3px solid black;
+  outline: 2px solid black;
   outline-offset: -1px;
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   position: relative;
   width: max-content;
   margin: 0 auto 5em;
@@ -93,6 +93,12 @@ section {
   transition-duration: 0.5s;
   z-index: 3;
   user-select: none;
+}
+@media (min-width: 800px) {
+  .sec-header {
+    font-size: 2rem;
+    outline-width: 3px;
+  }
 }
 .sec-header::before, .sec-header::after {
   content: "";
@@ -951,6 +957,7 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
   flex-wrap: wrap;
 }
 .events .time-cont .time-card {
+  user-select: none;
   width: 100px;
   display: flex;
   flex-direction: column;
@@ -979,6 +986,7 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
 }
 .events .time-cont .time-card:hover, .events .time-cont .time-card:hover span:last-child {
   border-color: #2196f3;
+  color: #2196f3;
 }
 .events h3 {
   font-size: 2rem;
@@ -1140,6 +1148,7 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   transition-duration: 0.3s;
+  text-transform: capitalize;
 }
 .pricing .card:hover button {
   background-color: #2196f3;
@@ -1249,6 +1258,8 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
 .statistics .card .category {
   color: #2196f3;
   font-size: 1rem;
+  text-align: center;
+  font-style: italic;
 }
 
 /* statistics done */
@@ -1263,11 +1274,11 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
   }
 }
 .discount .discount-details {
-  padding: 5em;
+  padding: 5em 2em;
   text-align: center;
-  background: #004d8b url(../images/discount-background2.jpg) no-repeat;
+  background: #00ffe7 url(../images/discount-background2.jpg) no-repeat;
   background-size: 100% 100%;
-  background-blend-mode: multiply;
+  background-blend-mode: overlay;
   color: white;
 }
 .discount .discount-details h3 {
@@ -1321,6 +1332,7 @@ header nav > .nav-links > li.toggle-link:hover .toggle-ul {
   height: 10em;
   resize: none;
   border: none;
+  font-family: "cairo";
 }
 .discount .discount-form form textarea:focus {
   outline: none;
