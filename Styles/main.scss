@@ -4,6 +4,10 @@
 
 /* Global Rules */
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 0.5em;
 }
